@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+	<title>Codificado</title>
+</head>
+<body>
+<h1>Codificar<h1>
+	
+	<script type="text/javascript">
+	var parrafo="este es un ejercicio nuevo con codificando.fútboll, joséa";
+
+	document.write("Frase inicial: "+parrafo+"</br>");
+	var normal =["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l",
+				 "ñ","z","c","v","b","n","m"," ",",",".","á","é","í","ó","ú"]
+
+	var codigo =["0Q","0W","0E","0R","0T","0Y","0U","0I","0O","0P","1A","1S","1D","1F","1G","1H","1J","1K","1L",
+				"1Ñ","2Z","2C","2V","2B","2N","2M","%0","%1","%2","3A","3E","4I","5O","6U"]
+				/*Se podria añadir mayusculas a los 2 array para controlar mas caracteres o pasar a minusculas el string "parrafo"*/
+	var final="";
+	var descodificar="";
+
+	for (i = 0; i < parrafo.length; i++) {
+			 final+=codigo[(normal.indexOf(parrafo[i]))];
+
+	}
+			 	
+	document.write("Frase Codificada: "+final+"</br>");
+
+	for (i = 0; i < final.length-1; i+=2) {
+			 descodificar+=normal[(codigo.indexOf(final[i]+final[i+1]))];
+
+	}
+	document.write("Frase descodificada: "+descodificar);
+	</script>
+
+</body>
+</html>
